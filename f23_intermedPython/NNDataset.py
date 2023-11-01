@@ -74,16 +74,12 @@ class NNData:
 
         try:
             self._features = np.array(features, dtype=np.float64)
-        except:
-            self._features = None
-            self._labels = None
-            raise ValueError
-        try:
             self._labels = np.array(labels, dtype=np.float64)
         except:
             self._features = None
             self._labels = None
             raise ValueError
+
         self.split_set()
 
     def split_set(self, new_train_factor=None):
